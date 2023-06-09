@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+</head>
+<style>
+    body{
+        background-image: url('https://media.istockphoto.com/id/1446229465/photo/red-heart-and-stethoscope-are-on-blue-background.webp?b=1&s=170667a&w=0&k=20&c=1-aE7XV24f8qVr8fGnpvypir8fSxYaM9sHZurKoutj8=');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .btn{
+        border-radius: 16px;
+        width:50%;
+        height:3rem;
+        font-size: 28px;
+        margin:2rem;
+        margin-left:25%;
+        margin-right:25%;
+        opacity: 0.5;
+        border-style: none;
+    }
+    .btn:hover{
+        background-color: rgb(255, 140, 0);
+        color:white;
+        opacity:1;
+    }
+    .a{
+      display:block;
+      color:white;
+        font-family: sans-serif;
+        font-size: 16px;
+        height: 8rem;
+        width:30%;
+       padding-top:0.2rem;
+       padding-left: 35%;
+       padding-right: 35%;
+       margin-top:1 rem;
+       background-color: None;
+    }
+    h2{
+        font-family: 'sans-serif';
+        font-size:28px;
+        color:white;
+        width:30%;
+        margin-left: 35%;
+        margin-right:35%;
+        padding-top:1rem;
+    }
+    .i{
+        opacity: 0.5;
+        width:50%;
+        height:2rem;
+        margin:0.2rem;
+        margin-left: 25%;
+    }
+    .c{
+        background-color: rgba(0, 0, 0, 0.626);
+        height:10rem;
+        
+    }
+</style>
+<body>
+    <div class="a">
+        <h1> Diabetes Prediction Model</h1>
+    </div>
+    
+    <form action="{{url_for('predict')}}" method="post">
+        
+    
+        <input type="text" name="Pregnancies" placeholder="Pregnancies" required="required" class="i"/><br>
+        <input type="text" name="Glucose" placeholder="Glucose" required="required"class="i"/><br>
+        <input type="text" name="BloodPressure" placeholder="BloodPressure" required="required" class="i"/><br>
+        <input type="text" name="SkinThickness" placeholder="SkinThickness" required="required" class="i"/><br>
+        <input type="text" name="Insulin" placeholder="Insulin" required="required" class="i"/><br>
+        <input type="text" name="BMI" placeholder="BMI" required="required" class="i"/><br>
+        <input type="text" name="DiabetesPedigreeFunction" placeholder="DiabetesPedigreeFunction" required="required" class="i"/><br>
+        <input type="text" name="Age" placeholder="Age" required="required" class="i"/><br>
+        <button type="submit" class="btn">Predict</button>
+    </form>
+    <div class="c">
+        <h2>
+           {{result}}
+        </h2>
+    </div>
+    
+</body>
+</html>
